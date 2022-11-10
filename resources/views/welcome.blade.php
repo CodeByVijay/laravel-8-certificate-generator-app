@@ -19,8 +19,8 @@
             <form action="{{route('certificate')}}" method="post">
                 @csrf
                 <div class="form-group">
-                  <label for=""></label>
-                  <input type="text" name="name" id="" class="form-control" placeholder="">
+                  <label for="">Enter Name</label>
+                  <input type="text" name="name" id="" class="form-control" placeholder="Enter Student Name">
                 </div>
                 <div class="btn">
                     <button type="submit" class="btn btn-success">Generate</button>

@@ -46,7 +46,7 @@ class CertificateController extends Controller
         $img->text($cer_no, 1000, 1350, function ($font) {
             $font->file(public_path('image/font.ttf'));
             $font->size(50);
-            $font->color('#c62e46');
+            $font->color('#000000');
             $font->align('center');
             $font->valign('bottom');
             $font->angle(0);

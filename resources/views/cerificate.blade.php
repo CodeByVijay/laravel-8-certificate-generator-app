@@ -10,7 +10,7 @@
 </head>
 <body>
 <div class="container mt-5 mb-5">
-    <img src="{{asset('image/certificate1.png')}}" alt="" width="800" height="600">
+    <img src="{{asset('image/certificate1.png')}}" class="img-fluid" alt="" width="800" height="600">
     <br>
     <a href="{{asset('image/certificate1.png')}}" download="certificate.png" class="btn btn-primary">Download</a>
 </div>
