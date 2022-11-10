@@ -51,9 +51,12 @@ class CertificateController extends Controller
             $font->valign('bottom');
             $font->angle(0);
         });
-        QrCode::size(500)
+        QrCode::size(300)
             ->format('png')
-            ->generate('Name : '.$name.' Certificate No. : '.$cer_no.' Date : '.$date, public_path('image/qrcode.png'));
+            ->color(49, 60, 221)
+            ->style('round')
+            ->eye('square')
+            ->generate('Name : ' . $name . ', Certificate No. : ' . $cer_no . ', Date : ' . $date . ' Verified Certificate.', public_path('image/qrcode.png'));
         $img->insert(public_path('image/qrcode.png'), 'bottom-left', 450, 450);
         $img->save(public_path('image/certificate1.png'));
         return view('cerificate');
