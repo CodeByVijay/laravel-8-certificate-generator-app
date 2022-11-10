@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Intervention\Image\Facades\Image;
-// use Intervention\Image\Image;
+use SimpleSoftwareIO\QrCode\Facades\QrCode;
 
 class CertificateController extends Controller
 {
@@ -51,7 +51,10 @@ class CertificateController extends Controller
             $font->valign('bottom');
             $font->angle(0);
         });
-        $img->insert(public_path('image/qr.png'), 'bottom-left', 450, 450);
+        QrCode::size(500)
+            ->format('png')
+            ->generate('Name : '.$name.' Certificate No. : '.$cer_no.' Date : '.$date, public_path('image/qrcode.png'));
+        $img->insert(public_path('image/qrcode.png'), 'bottom-left', 450, 450);
         $img->save(public_path('image/certificate1.png'));
         return view('cerificate');
     }
