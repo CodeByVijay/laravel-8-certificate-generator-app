@@ -17,5 +17,5 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('welcome');
 });
-Route::get('/certificate/{name?}',[CertificateController::class,'makeimage']);
+Route::post('/certificate',[CertificateController::class,'makeimage'])->name('certificate');
 

@@ -10,15 +10,15 @@ class CertificateController extends Controller
 {
 
 
-    public function makeimage($name = "Vijay Amule")
+    public function makeimage(Request $request)
     {
-        // $name = "Vijay Amule";
+       $name = $request->name;
         $date = date('d M Y');
         $sign = "Vijay Amule";
         $cer_no = rand(000000000, 999999999);
         $img = Image::make(public_path('image/certificate.png'));
         $img->text($name, 1050, 680, function ($font) {
-            $font->file(public_path('image/font.ttf'));
+            $font->file(public_path('image/LibreBaskerville-Italic.ttf'));
             $font->size(50);
             $font->color('#c62e46');
             $font->align('center');
@@ -51,7 +51,7 @@ class CertificateController extends Controller
             $font->valign('bottom');
             $font->angle(0);
         });
-        QrCode::size(300)
+        QrCode::size(250)
             ->format('png')
             ->color(49, 60, 221)
             ->style('round')
